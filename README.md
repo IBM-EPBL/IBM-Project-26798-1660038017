@@ -13,6 +13,6 @@ Personal finance applications will ask users to add their expenses and based on 
 
 
 
-Technical Architecture:
+# Technical Architecture
 
 ![image](https://user-images.githubusercontent.com/38141595/193470943-fa3c1266-df50-4e3f-84f1-00351ca8430d.png)
