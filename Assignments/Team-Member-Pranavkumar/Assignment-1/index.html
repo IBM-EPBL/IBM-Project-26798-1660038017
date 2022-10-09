@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <title>Simple HTML - Form table</title>
+
+    <style>@import url('https://fonts.googleapis.com/css?family=Raleway');
+      body {
+        margin: 100px;
+        font-family: 'Raleway';
+        font-size: 16px;
+        line-height: 1.8em;
+        background-image: url('./img/bg.jpg');
+        background-size: cover;
+        background-position: fixed;
+        font-weight: bold;
+      }</style>
+    <script>
+        function display(form){
+            form.o_username.value = form.username.value;
+            form.o_qualification.value=form.qualification.value;
+            form.o_age.value = form.age.value;
+            form.o_email.value = form.email.value;
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form name="input" action="" method="get" onsubmit="return display(this);">
+        <section>
+            <div class = "scrollWrapper">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>&nbsp;</td>
+                    <th>Qualification</th>
+                    <td>&nbsp;</td>
+                    <th>Age</th>
+                    <td>&nbsp;</td>
+                    <th>Email</th>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><output name="o_username" style="width:100px; height:20px"></output></td>
+                    <td>&nbsp;</td>
+                    <td><output name="o_qualification" style="width:100px; height:20px"></output></td>
+                    <td>&nbsp;</td>
+                    <td><output name="o_age" style="width:100px; height:20px"></output></td>
+                    <td>&nbsp;</td>
+                    <td><output name="o_email" style="width:100px; height:20px"></output></td>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+            </table>
+            </div>
+        </section>
+        <section id = "sec2">
+                <p>Name:</p><input type="text" name="username"><br>
+               <p>Qualification:</p>
+                <select name="qualification" id="qualification">
+                  <option value="BE">Bachelor of Engineering</option>
+                  <option value="BTech">Bachelor of Technology</option>
+                  <option value="ME">Master of Engineering</option>
+                  <option value="MTech">Master of Technology</option>
+                </select><br>
+                <p>Age:</p><input type="text" name="age"><br>
+                <p>Enter your email:</p><input type="email" id="email" name="email"><br>
+                <input type="submit" value="Submit">
+
+        </section>
+    </form>
+</body>
+</html>
