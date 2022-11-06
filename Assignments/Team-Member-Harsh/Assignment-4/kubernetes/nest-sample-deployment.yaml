@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nest-sample-deployment
+  labels:
+    app: nest-sample
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nest-sample
+  template:
+    metadata:
+      labels:
+        app: nest-sample
+    spec:
+      containers:
+        - name: nginx
+          image: au.icr.io/assignment4/nest_sample
+          ports:
+            - containerPort: 3000
