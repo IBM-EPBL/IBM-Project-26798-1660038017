@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block header %}
+<h1 class="text-lg md:text-2xl font-bold dark:text-white">
+  {% block title %}Dashboard{% endblock %}
+</h1>
+{% endblock %} {% block content %} {% if g.user %}
+<div class="dark:text-white">Name: {{ g.user["NAME"] }}</div>
+<div class="dark:text-white">Username: {{ g.user["USERNAME"] }}</div>
+<div class="dark:text-white">E-mail: {{ g.user["EMAIL"] }}</div>
+<div class="dark:text-white">Balance: {{ g.user["BALANCE"] }}</div>
+{% endif %} {% endblock %}
