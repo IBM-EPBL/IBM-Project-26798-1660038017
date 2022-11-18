@@ -1,0 +1,4 @@
+graft expense_tracker/static
+graft expense_tracker/templates
+graft DigiCertGlobalRootCA.crt
+global-exclude *.pyc
