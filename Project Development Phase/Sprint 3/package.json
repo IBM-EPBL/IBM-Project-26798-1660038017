@@ -1,0 +1,23 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Software Required: Python, Flask , Docker System Required: 8GB RAM,Intel Core i3,OS-Windows/Linux/MAC ,Laptop or Desktop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshbhandariv/expense-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshbhandariv/expense-tracker/issues"
+  },
+  "homepage": "https://github.com/harshbhandariv/expense-tracker#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
