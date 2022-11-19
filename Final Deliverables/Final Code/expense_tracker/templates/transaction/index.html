@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% block header %}
+<div class="flex justify-between">
+  <h1 class="text-lg md:text-2xl font-bold dark:text-white">
+    {% block title %}Transaction{% endblock %}
+  </h1>
+  <div>
+    <a href="{{ url_for('transaction.add') }}">
+      <button
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Add transaction
+      </button>
+    </a>
+  </div>
+</div>
+{% endblock %} {% block content %}
+<table
+  class="inline-block md:inline-table w-full dark:text-white overflow-x-scroll whitespace-nowrap"
+>
+  <thead>
+    <tr>
+      <th
+        class="border-b dark:border-slate-600 text-left text-slate-400 font-medium dark:text-slate-200 p-2 pl-0"
+      >
+        Amount
+      </th>
+      <th
+        class="border-b dark:border-slate-600 text-left text-slate-400 font-medium dark:text-slate-200 p-2 pl-0"
+      >
+        Description
+      </th>
+      <th
+        class="border-b dark:border-slate-600 text-left text-slate-400 font-medium dark:text-slate-200 p-4 pl-0"
+      >
+        Category
+      </th>
+      <th
+        class="border-b dark:border-slate-600 text-left text-slate-400 font-medium dark:text-slate-200 p-2 pl-0"
+      >
+        Date
+      </th>
+      <th
+        class="border-b dark:border-slate-600 text-left text-slate-400 font-medium dark:text-slate-200 p-2 pl-0"
+      >
+        Receipt
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for transaction in transactions %}
+    <tr>
+      <td
+        class="border-b border-slate-100 dark:border-slate-700 p-4 pl-0 text-slate-500 dark:text-slate-400"
+      >
+        {{ transaction[0] }}
+      </td>
+      <td
+        class="border-b border-slate-100 dark:border-slate-700 p-4 pl-0 text-slate-500 dark:text-slate-400"
+      >
+        {{ transaction[1] }}
+      </td>
+      <td
+        class="border-b border-slate-100 dark:border-slate-700 p-4 pl-0 text-slate-500 dark:text-slate-400"
+      >
+        {{ transaction[2] }}
+      </td>
+      <td
+        class="border-b border-slate-100 dark:border-slate-700 p-4 pl-0 text-slate-500 dark:text-slate-400"
+      >
+        {{ transaction[3] }}
+      </td>
+      <td
+        class="border-b border-slate-100 dark:border-slate-700 p-4 pl-0 text-slate-500 dark:text-slate-400"
+      >
+        {% if transaction[4] == 'none' %} none {% else %}
+        <a href="/transaction/receipt/{{ transaction[4] }}" class="underline"
+          >link</a
+        >
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

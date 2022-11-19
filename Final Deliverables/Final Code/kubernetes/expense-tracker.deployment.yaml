@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-tracker-deployment
+  labels:
+    app: expense-tracker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expense-tracker
+  template:
+    metadata:
+      labels:
+        app: expense-tracker
+    spec:
+      containers:
+        - name: expense-tracker
+          image: au.icr.io/expense_tracker/expense_tracker
+          ports:
+            - containerPort: 8080
+          env:
+            - name: CONN_STR
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: CONN_STR
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: SECRET_KEY
+            - name: ADMIN_MAIL
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: ADMIN_MAIL
+            - name: MAIL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: MAIL_API_KEY
+            - name: MAIL_API_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: MAIL_API_SECRET
+            - name: COS_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: COS_ENDPOINT
+            - name: COS_INSTANCE_CRN
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: COS_INSTANCE_CRN
+            - name: COS_API_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: COS_API_KEY_ID
+            - name: COS_BUCKET_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: COS_BUCKET_NAME
+            - name: COS_HMAC_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: COS_HMAC_ACCESS_KEY
+            - name: COS_HMAC_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: expense-tracker-secret
+                  key: COS_HMAC_SECRET_KEY

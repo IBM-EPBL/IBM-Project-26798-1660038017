@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% block header %}
+<h1 class="text-lg md:text-2xl font-bold dark:text-white">
+  {% block title %}Add Transaction{% endblock %}
+</h1>
+{% endblock %} {% block content %}
+<form method="post" enctype="multipart/form-data">
+  <div class="mb-6">
+    <label
+      for="amount"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+      >Amount</label
+    >
+    <input
+      name="amount"
+      id="amount"
+      class="bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      required
+    />
+  </div>
+  <div class="mb-6">
+    <label
+      for="category"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+      >Category</label
+    >
+    <select
+      name="category"
+      id="category"
+      class="bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      required
+    >
+      <option value="food">food</option>
+      <option value="transport">transport</option>
+      <option value="rent">rent</option>
+      <option value="clothes">clothes</option>
+      <option value="utility">utility bill</option>
+      <option value="insurance">insurance</option>
+      <option value="entertainment">loan</option>
+      <option value="others">others</option>
+    </select>
+  </div>
+  <div class="mb-6">
+    <label
+      for="description"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+      >Description</label
+    >
+    <input
+      name="description"
+      id="description"
+      class="bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      required
+    />
+  </div>
+  <div class="mb-6">
+    <label
+      for="date"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+      >Date</label
+    >
+    <input
+      name="date"
+      id="date"
+      type="date"
+      class="bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      required
+    />
+  </div>
+  <div class="mb-6">
+    <label
+      for="receipt"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+      >Receipt(optional)</label
+    >
+    <input
+      name="receipt"
+      id="receipt"
+      type="file"
+      class="bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    />
+  </div>
+  <div class="mb-6">
+    <input
+      type="submit"
+      value="Add"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    />
+  </div>
+</form>
+{% endblock %}
